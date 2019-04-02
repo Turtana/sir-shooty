@@ -1,7 +1,7 @@
 extends Node2D
 
 export var radius = 300
-export var lines = 100
+export var lines = 50
 export var fov = PI / 3
 export var dir = PI / 2
 
@@ -11,6 +11,7 @@ func _process(delta):
 	update()
 
 func _draw():
+	var points = [origo]
 	for i in range(lines + 1):
 		var angle = dir - fov / 2 + i * (fov / lines)
 		var dist = Vector2(origo.x + radius * sin(angle), origo.y + radius * cos(angle))
@@ -23,4 +24,5 @@ func _draw():
 		if ray.is_colliding():
 			dist = ray.get_collision_point() - to_global(position)
 		
-		draw_line(origo, dist, Color.yellow, 2.0)
+		points.push_front(dist)
+	draw_polygon(points, PoolColorArray([Color.yellow]))

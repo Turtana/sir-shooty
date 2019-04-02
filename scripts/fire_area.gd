@@ -25,4 +25,4 @@ func _draw():
 			dist = ray.get_collision_point() - to_global(position)
 		
 		points.push_front(dist)
-	draw_polygon(points, PoolColorArray([Color.yellow]))
+	draw_polygon(points, PoolColorArray([Color(1, 1, 0, 0.5)]))

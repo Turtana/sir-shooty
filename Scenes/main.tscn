@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/sir_shooty.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/box.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/HUD.tscn" type="PackedScene" id=3]
+
+[node name="Main" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 472.692, 309.208 )
+
+[node name="Node2D" parent="." instance=ExtResource( 2 )]
+position = Vector2( 154.686, 164.055 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Node2D2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 761.889, 486.493 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Node2D3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 766.321, 115.302 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Node2D4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 218.952, 444.388 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Node2D5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 549.146, 78.7368 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="HUD" parent="." instance=ExtResource( 3 )]
+

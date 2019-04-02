@@ -33,6 +33,7 @@ func _process(delta):
 		fire.position = position
 		fire.rotation = (position.angle_to_point(mpos) - PI / 2) + rand_range(-fov / 2, fov / 2)
 		can_shoot = false
+		$PewSound.play()
 		$FireDelay.start()
 	
 	$FireArea.dir = 3 * PI / 2 - position.angle_to_point(get_viewport().get_mouse_position())

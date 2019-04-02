@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scripts/shooty.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/bullet.tscn" type="PackedScene" id=2]
+[ext_resource path="res://art/icon.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/fire_area.tscn" type="PackedScene" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 31.3314, 33.1006 )
+
+[node name="Player" type="KinematicBody2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 1 )
+Bullet = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 3 )
+
+[node name="FireDelay" type="Timer" parent="."]
+wait_time = 0.2
+autostart = true
+
+[node name="FireArea" parent="." instance=ExtResource( 4 )]
+position = Vector2( 0, 0 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[connection signal="timeout" from="FireDelay" to="." method="_on_FireDelay_timeout"]

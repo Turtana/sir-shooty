@@ -9,5 +9,5 @@ func _process(delta):
 func _on_Timer_timeout():
 	get_parent().remove_child(self)
 
-func _on_Bullet_body_entered(body):
+func _on_Bullet_body_entered(_body):
 	queue_free()

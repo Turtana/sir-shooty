@@ -27,6 +27,7 @@ autostart = true
 
 [node name="FireArea" parent="." instance=ExtResource( 3 )]
 position = Vector2( 0, 0 )
+enabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 2 )

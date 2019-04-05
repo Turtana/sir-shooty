@@ -2,12 +2,14 @@ extends KinematicBody2D
 
 export (PackedScene) var Bullet
 export var speed = 300
-export var fov = PI / 3
+export var fov = 60
 
 var can_shoot = true
 var screen_size
 
 func _ready():
+	fov = fov * (PI / 180)
+	$FireArea.fov = fov
 	screen_size = get_viewport_rect().size
 
 func _process(delta):

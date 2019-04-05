@@ -17,6 +17,7 @@ collision_layer = 2
 collision_mask = 2
 script = ExtResource( 1 )
 Bullet = ExtResource( 2 )
+fov = 30
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = SubResource( 1 )
@@ -27,6 +28,7 @@ autostart = true
 
 [node name="FireArea" parent="." instance=ExtResource( 3 )]
 position = Vector2( 0, 0 )
+radius = 500
 enabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -23,7 +23,7 @@ texture = ExtResource( 3 )
 position = Vector2( 411.803, 526.16 )
 
 [node name="Enemy2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 805.596, 269.837 )
+position = Vector2( 637.175, 120.253 )
 
 [node name="Enemy3" parent="." instance=ExtResource( 4 )]
 position = Vector2( 361.684, 66.4967 )
@@ -45,4 +45,7 @@ position = Vector2( 885.786, 524.728 )
 
 [node name="Box6" parent="." instance=ExtResource( 5 )]
 position = Vector2( 122.545, 109.456 )
+
+[node name="Enemy4" parent="." instance=ExtResource( 4 )]
+position = Vector2( 732.417, 478.604 )
 

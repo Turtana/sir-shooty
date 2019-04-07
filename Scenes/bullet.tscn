@@ -1,27 +1,34 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scripts/bullet.gd" type="Script" id=1]
-[ext_resource path="res://art/bullet2.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/spark.tscn" type="PackedScene" id=2]
+[ext_resource path="res://art/bullet3.png" type="Texture" id=3]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 5.90619
-height = 90.304
+radius = 2.76167
+height = 5.52729
 
 [node name="Bullet" type="Area2D"]
 collision_layer = 0
 collision_mask = 4
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_vertical_guides_": [  ]
+}
+spark = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 0, -50 )
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -50.435 )
+position = Vector2( -0.0626717, -0.167404 )
 shape = SubResource( 1 )
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
 autostart = true
+
+[node name="SparkLocation" type="Node2D" parent="."]
 
 [connection signal="body_entered" from="." to="." method="_on_Bullet_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

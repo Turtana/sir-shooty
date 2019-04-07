@@ -1,6 +1,6 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://Scenes/enemy.gd" type="Script" id=1]
+[ext_resource path="res://scripts/enemy.gd" type="Script" id=1]
 [ext_resource path="res://art/enemy.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/fire_area.tscn" type="PackedScene" id=3]
 [ext_resource path="res://sound/pew.wav" type="AudioStream" id=4]
@@ -13,6 +13,16 @@ radius = 31.0
 size = 26
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 5 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0, 1, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 1, 0, 0, 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 32
 font_data = ExtResource( 5 )
 
 [node name="Enemy" type="KinematicBody2D"]
@@ -32,7 +42,7 @@ shape = SubResource( 1 )
 [node name="PewSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
 
-[node name="HitChance" type="Label" parent="."]
+[node name="HitChanceLabel" type="Label" parent="."]
 margin_left = 20.0
 margin_top = -65.0
 margin_right = 85.0
@@ -41,4 +51,19 @@ custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 1, 0.654902, 0, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+anchor_right = 0.52
+anchor_bottom = 0.5
+margin_left = -29.0557
+margin_top = 36.0
+margin_right = 164.944
+margin_bottom = 75.0
+rect_scale = Vector2( 0.3, 0.3 )
+custom_styles/fg = SubResource( 4 )
+custom_styles/bg = SubResource( 5 )
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+value = 70.0
+percent_visible = false
 

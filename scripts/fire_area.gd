@@ -19,8 +19,9 @@ func _process(_delta):
 	update()
 
 func _draw():
+	var old_enemies = []
 	if (enabled):
-		var old_enemies = enemies
+		old_enemies = enemies
 		enemies = []
 		var points = [origo]
 		
@@ -52,9 +53,13 @@ func _draw():
 				continue
 			if enemies.find(old_enemy) == -1:
 				old_enemy.set_hit_chance(0)
-				old_enemies.remove(old_enemies.find(old_enemy))
+				old_enemies.erase(old_enemy)
 		
 		for enemy in enemies:
 			var hit_rays = enemy.get("rays_into_enemy")
 			enemy.set_hit_chance(float(hit_rays) / (line_rays))
 		draw_polygon(points, PoolColorArray([Color(1, 1, 0, 0.5)]))
+	else: # disabled
+		for old_enemy in enemies:
+			old_enemy.set_hit_chance(0)
+			enemies.erase(old_enemy)

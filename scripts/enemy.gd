@@ -4,9 +4,7 @@ export var id = "enemy"
 export var rays_into_enemy = 0
 export var hit_chance = 0
 export var health = 100
-export var alive = true
-
-var dead_img = preload("res://art/enemy_dead.png")
+#export var alive = true
 
 func _ready():
 	$HealthBar.value = health
@@ -27,7 +25,7 @@ func damage(dmg):
 		queue_free()
 	$HealthBar.value = health
 
-func die():
-	$HealthBar.visible = false
-	$Sprite.texture = dead_img
-	alive = false
+#func die():
+#	$HealthBar.visible = false
+#	$Sprite.texture = dead_img
+#	alive = false

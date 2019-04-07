@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/shoe.png-262ef25f2c4bebe52178b27bf8dd93cf.stex"
+path="res://.import/floor_panel.png-7ac44fc161fc00e4dd73399e160a3c73.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/char1/shoe.png"
-dest_files=[ "res://.import/shoe.png-262ef25f2c4bebe52178b27bf8dd93cf.stex" ]
+source_file="res://art/floor_panel.png"
+dest_files=[ "res://.import/floor_panel.png-7ac44fc161fc00e4dd73399e160a3c73.stex" ]
 
 [params]
 

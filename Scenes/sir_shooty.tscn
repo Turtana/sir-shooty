@@ -19,17 +19,14 @@ script = ExtResource( 1 )
 Bullet = ExtResource( 2 )
 fov = 30
 
-[node name="Sprite" type="Sprite" parent="."]
-texture = SubResource( 1 )
-
-[node name="FireDelay" type="Timer" parent="."]
-wait_time = 0.2
-autostart = true
-
 [node name="FireArea" parent="." instance=ExtResource( 3 )]
 position = Vector2( 0, 0 )
+z_index = 0
 radius = 500
 enabled = true
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = SubResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 2 )
@@ -37,4 +34,3 @@ shape = SubResource( 2 )
 [node name="PewSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
 
-[connection signal="timeout" from="FireDelay" to="." method="_on_FireDelay_timeout"]

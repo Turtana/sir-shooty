@@ -1,15 +1,19 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://scripts/fps_counter.gd" type="Script" id=2]
+[ext_resource path="res://scripts/HUD.gd" type="Script" id=1]
+[ext_resource path="res://fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://art/ui_move.png" type="Texture" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 36
-font_data = ExtResource( 1 )
+font_data = ExtResource( 2 )
 
 [node name="HUD" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_top = -1.36035
+margin_bottom = -1.36035
+script = ExtResource( 1 )
 
 [node name="FpsCounter" type="Label" parent="."]
 margin_left = 10.0
@@ -18,6 +22,16 @@ margin_right = 89.0
 margin_bottom = 58.0
 size_flags_vertical = 1
 custom_fonts/font = SubResource( 1 )
-text = "TEST"
-script = ExtResource( 2 )
+text = "FPS"
 
+[node name="ModeButton" type="Button" parent="."]
+margin_left = 33.117
+margin_top = 465.551
+margin_right = 345.117
+margin_bottom = 671.551
+rect_scale = Vector2( 0.5, 0.5 )
+icon = ExtResource( 3 )
+
+[connection signal="mouse_entered" from="." to="." method="_on_HUD_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_HUD_mouse_exited"]
+[connection signal="pressed" from="ModeButton" to="." method="_on_ModeButton_pressed"]

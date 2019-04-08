@@ -22,7 +22,7 @@ fov = 30
 [node name="FireArea" parent="." instance=ExtResource( 3 )]
 position = Vector2( 0, 0 )
 z_index = 0
-radius = 500
+radius = 1000
 enabled = true
 
 [node name="Sprite" type="Sprite" parent="."]

@@ -8,6 +8,7 @@ export var hold_control = true
 var screen_size
 var mode
 var move_to_coords
+var last_position
 
 func _ready():
 	fov = fov * (PI / 180)
@@ -17,15 +18,16 @@ func _ready():
 	move_to_coords = position
 
 func _process(_delta):
+	last_position = position
 	if ((position - move_to_coords).length() > 5 and mode == "move"):
 		var velocity = Vector2(-1, 0)
 		velocity = velocity.rotated(position.angle_to_point(move_to_coords))
+#warning-ignore:return_value_discarded
 		move_and_slide(velocity * speed)
-	else:
-		position = move_to_coords
 	
-	position.x = clamp(position.x, 0, screen_size.x)
-	position.y = clamp(position.y, 0, screen_size.y)
+	if last_position == position and move_to_coords != position:
+		print("Blocked")
+		move_to_coords = position
 	
 	if mode == "shoot":
 		$FireArea.enabled = true
@@ -54,12 +56,12 @@ func move():
 
 
 func burst(amount):
-	for i in range(amount):
+	for _i in range(amount):
 		shoot()
 		yield(get_tree().create_timer(.2), "timeout")
 
 func shotgun(amount):
-	for i in range(amount):
+	for _i in range(amount):
 		shoot()
 
 func shoot():

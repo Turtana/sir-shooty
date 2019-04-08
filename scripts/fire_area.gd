@@ -1,17 +1,18 @@
 extends Node2D
 
 export var radius = 300
-export var lines = 50
-export var fov = 60
+export var fov = PI / 3
 export var dir = PI / 2
 export var enabled = false
 
 var origo = Vector2(0,0)
 var enemies
 var line_rays
+var lines
 
 func _enter_tree():
-	fov = fov * (PI / 180)
+	var fov_rounded = round(fov * (180 / PI))
+	lines = 3 * fov_rounded
 	line_rays = lines + 1
 	enemies = []
 
@@ -24,6 +25,7 @@ func _draw():
 		old_enemies = enemies
 		enemies = []
 		var points = [origo]
+		print(line_rays)
 		
 		for i in range(line_rays):
 			var angle = dir - fov / 2 + i * (fov / lines)

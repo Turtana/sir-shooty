@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Scenes/main.gd" type="Script" id=1]
+[ext_resource path="res://scripts/main.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/HUD.tscn" type="PackedScene" id=2]
 [ext_resource path="res://tiles.tres" type="TileSet" id=3]
 [ext_resource path="res://Scenes/enemy.tscn" type="PackedScene" id=4]
@@ -37,7 +37,6 @@ position = Vector2( 652.807, 481.397 )
 
 [node name="Player" parent="." instance=ExtResource( 5 )]
 position = Vector2( 139.637, 147.077 )
-fov = 180
 
 [node name="Camera" type="Camera2D" parent="."]
 position = Vector2( -2.02319, -0.978668 )

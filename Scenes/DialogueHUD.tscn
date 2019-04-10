@@ -7,7 +7,7 @@
 [ext_resource path="res://fonts/basic_font.tres" type="DynamicFont" id=5]
 [ext_resource path="res://fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=6]
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=1]
 resource_name = "empath_float"
 length = 2.0
 loop = true
@@ -26,7 +26,7 @@ tracks/0/keys = {
 size = 24
 font_data = ExtResource( 6 )
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=3]
 size = 24
 font_data = ExtResource( 6 )
 
@@ -42,13 +42,13 @@ texture = ExtResource( 2 )
 stretch_mode = 1
 
 [node name="CharImage" type="Sprite" parent="."]
-position = Vector2( 810, 343 )
+position = Vector2( 810, 340 )
 scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 3 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CharImage"]
 playback_speed = 0.5
-anims/empath_float = SubResource( 5 )
+anims/empath_float = SubResource( 1 )
 
 [node name="Name" type="Label" parent="."]
 margin_left = 100.0
@@ -82,7 +82,7 @@ margin_left = 19.0
 margin_top = 17.0
 margin_right = 550.0
 margin_bottom = 87.0
-custom_fonts/normal_font = SubResource( 4 )
+custom_fonts/normal_font = SubResource( 3 )
 text = "Placeholder"
 scroll_following = true
 

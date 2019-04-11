@@ -1,7 +1,7 @@
 extends Control
 
-var button_shoot = preload("res://art/ui_shoot.png")
-var button_move = preload("res://art/ui_move.png")
+var button_shoot = preload("res://art/ui/ui_shoot.png")
+var button_move = preload("res://art/ui/ui_move.png")
 
 signal change_mode
 signal only_hud_input

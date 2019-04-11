@@ -1,10 +1,11 @@
 [gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scripts/enemy.gd" type="Script" id=1]
-[ext_resource path="res://art/enemy.png" type="Texture" id=2]
+[ext_resource path="res://art/map/enemy.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/fire_area.tscn" type="PackedScene" id=3]
 [ext_resource path="res://sound/pew.wav" type="AudioStream" id=4]
 [ext_resource path="res://fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=5]
+
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 31.0
